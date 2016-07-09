@@ -1,0 +1,85 @@
+
+{% extends 'base2.html' %}
+
+{% block 'content' %}
+
+<div class = "text-2c" style = "width:700px;font-size:20px;">
+  <div style = "margin-top:50px;font-size:30px;text-decoration:underline;margin-bottom:30px;">
+
+
+  Change a reservation  :
+</div>
+
+
+    <!-- <div class = "table"> -->
+      <table style = "width:300px;">
+        <tr>
+            <td>
+          ID
+            </td>
+            <td>
+            {{object.pk}}
+            </td>
+        </tr>
+
+
+          <tr>
+              <td>
+              How Many
+              </td>
+              <td>
+              {{object.How_many_for_reservation}}
+              </td>
+          </tr>
+
+          <tr>
+              <td>
+            What Time
+              </td>
+              <td>
+              {{objects.what_time}}
+              </td>
+          </tr>
+
+          <tr>
+              <td>
+          Food Ordered
+              </td>
+              <td>
+              {{objects.food_ordered}}
+              </td>
+          </tr>
+
+          <tr>
+              <td>
+          Price Paid
+              </td>
+              <td>
+              {{objects.price_paid}}
+              </td>
+          </tr>
+
+
+
+
+
+
+
+  </table>
+
+
+
+<form method="post" action="/list" enctype="multipart/form-data" accept-charset="UTF-8" class="sidebar-form">
+      {% csrf_token %}
+      <div class = "formb">
+              {{ form.as_p }}<br>
+            </div>
+
+
+              <input name="" type="submit" value="Add"  ></input>
+
+
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+/* fontS */
+
+@font-face {
+    font-family: 'open_sansregular';
+  open_sansregular
+}
+
+@font-face {
+    font-family: 'open_sanssemibold';
+    src: url('../../static/font/opensans-semibold-webfont.eot');
+    src: url('../../static/font/opensans-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../static/font/opensans-semibold-webfont.woff2') format('woff2'),
+         url('../../static/font/opensans-semibold-webfont.woff') format('woff'),
+         url('../../static/font/opensans-semibold-webfont.ttf') format('truetype'),
+         url('../../static/font/opensans-semibold-webfont.svg#open_sanssemibold') format('svg');
+}
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('../../static/font/opensans-bold-webfont.eot');
+    src: url('../../static/font/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../static/font/opensans-bold-webfont.woff2') format('woff2'),
+         url('../../static/font/opensans-bold-webfont.woff') format('woff'),
+         url('../../static/font/opensans-bold-webfont.ttf') format('truetype'),
+         url('../../static/font//opensans-bold-webfont.svg#open_sansbold') format('svg');
+}
+
+
+@font-face {
+    font-family: 'socialicoregular';
+    src: url('../../static/font/socialico-webfont.eot');
+    src: url('../../static/font/socialico-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../static/font/socialico-webfont.woff2') format('woff2'),
+         url('../../static/font/socialico-webfont.woff') format('woff'),
+         url('../../static/font/socialico-webfont.ttf') format('truetype'),
+         url('../../static/font/socialico-webfont.svg#socialicoregular') format('svg');
+}
+
+@font-face {
+    font-family: 'socialico_plusregular';
+    src: url('../../static/font/socialico_plus-webfont.eot');
+    src: url('../../static/font/socialico_plus-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../static/font/socialico_plus-webfont.woff2') format('woff2'),
+         url('../../static/font/socialico_plus-webfont.woff') format('woff'),
+         url('../../static/font/socialico_plus-webfont.ttf') format('truetype'),
+         url('../../static/font/socialico_plus-webfont.svg#socialico_plusregular') format('svg');
+}

@@ -1,0 +1,70 @@
+
+{% extends 'base2.html' %}
+
+{% block 'content' %}
+
+<div id="A2" style = "height:auto;">
+
+    <div id="text-2a" class="wow fadeIn" data-wow-offset="10" style = "margin-top:30px;"> This site is demo made for an Table Reservation System.  <br><br>Objectives:
+
+      <ol class = "text-cover">
+
+
+
+
+
+
+
+  
+        <li>
+        Think through what sort of metrics you will want to collect as a restaurant owner and explain how you would collect them
+      </li>
+
+        <li>
+        Model the system to be flexible for an online booking system as well as being used by your staff (ie open table)
+
+        </li>
+        <li>
+        Write out any trade offs / thoughts/suggestions you thought about so I can get a glimpse into how you approached the problem and design
+        </li>
+<li>
+Have a front end I can play with, even if it’s not pretty.
+</li>
+      </ol>
+
+    </div>
+
+</div>
+
+<!-- PART 3 - PORTFOLIO ARTICLES 3 GRID -->
+
+<div id="wrapper-A3" class="object">
+{% for ab in data %}
+	<div id="A3-left">
+
+			<div id="wrapper-post1" class="text-part-A5">
+				<div id="A3-left-image-2"><img src="{{ab.picture.url}}"/></div></a>
+
+					<div id="wrapper-A3-left-date-1">
+						<div id="A3-left-date-1"> {{ab.date_created}}</div>
+							<div id="A3-left-icone-1"></div>
+					</div>
+					<ul>
+						<li><div id="A3-left-title-1"><a href="/article/{{ ab.titlea }}">{{ ab.titlea }}</a></div></li>
+					</ul>
+						<div id="A3-left-text-1"> {{ab.message | slice:":70"}}...</div>
+				</div>
+
+
+
+        </div>
+
+{% endfor %}
+
+	<div class="calage"></div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,269 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<title>Reservations</title>
+
+<!-- Behavioral Meta Data -->
+
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="icon" type="image/png" href="{% static "images/small-logo-01.png" %}"  />
+<link href="{% static "css/spore-font.css" %}" rel="stylesheet" />
+<link href="{% static "css/animate.css" %}" rel="stylesheet" />
+<link href="{% static "css/spore-animate.css" %}" rel="stylesheet" />
+<link href="{% static "css/additionalstyle.css" %}" rel="stylesheet" />
+<link href="{% static "css/bootstrap.css" %}" rel="stylesheet" />
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script>
+$(function() {
+$( "#id_what_day" ).datepicker();
+});
+</script>
+
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+
+
+
+
+<style>
+
+
+
+
+</style>
+
+</head>
+<body>
+
+<!-- MENU TAB -->
+<div id="main-wrapper-menu">
+<div id="wrapper-cross"></div>
+<div id="wrapper-menu">
+
+
+
+<div class="recent-post text-part-menutab" style = "margin-top:170px;">
+<ul>
+<li><div id="recent-post-title">Account Settings</div></li>
+<li><div id="recent-post-1"><a href="/accounts/login">Login</a></div></li>
+<li><div id="recent-post-2"><a href="/accounts/logout">Logout</a></div></li>
+<li><div id="recent-post-3"><a href="/accounts/signup">New Account</a></div></li>
+<!-- <li><div id="recent-post-4"><a href="spore-post3.html">Auto-resized image</a></div></li> -->
+</ul>
+</div>
+
+<!-- <div class="category-post text-part-menutab">
+<div id="line-category-post"></div>
+<ul>
+<li><div id="category-post-title">Categories post</div></li>
+<li><div id="category-post-1"><a href="spore-cat-video.html">Video articles</a></div></li>
+<li><div id="category-post-2"><a href="spore-cat-hotpost.html">Hot articles</a></div></li>
+<li><div id="category-post-3"><a href="spore-cat-image.html">Images</a></div></li>
+</ul>
+</div>
+-->
+</div>
+</div>
+
+<!-- BOUTON MENU TAB -->
+
+<div id="wrapper-plus" style= "color:white;font-size:26px;">{% if request.user.is_authenticated %} {{request.user}} {% else %} Login{% endif %}</div>
+
+<!-- HEADER -->
+
+<div id="A1-main">
+
+<div id="wrapper-logo" class="object">
+
+</div>
+
+<div id="A1">
+<div style = "height:390px;overflow:hidden;
+
+">
+<img src="{% static "images/gallery-in-a-page1.jpg" %}" style = "width:100%;min-width:1447px;">
+</div>
+<div class="blank"></div>
+
+<div id="A0" ></div>
+<div id="A0-2"></div>
+<div id="trame"></div>
+
+
+<div id="wrapper-head">
+
+
+<div style = "margin-left:auto;margin-right:auto;width:280px;margin-top:40px;"><img src = "{% static "images/logo2.png" %}"></div>
+
+
+<div class ="banner-text"  style =  "font-family: Tahoma, Geneva, sans-serif;">
+
+<a href = "/create" >
+Create a Booking </a>
+&nbsp; | &nbsp;
+<a href = "/list">View Bookings</a>
+
+
+&nbsp; |  &nbsp;
+<a href = "/about_us">
+ About us
+</a>
+</div>
+
+    </div>
+
+
+   <a href="#ancre"><div id="fleche1"></div></a>
+</div>
+
+
+<div id="wrapper-plus" class="object"></div>
+
+</div>
+
+</div>
+
+<div style = "height:auto;">
+
+
+  <div class="container">
+
+  <div id="form-demo" class="row-field">
+  	<!-- <form method="post" action="" enctype="multipart/form-data" accept-charset="UTF-8" class="sidebar-form">
+
+  	      {% csrf_token %}
+
+  	              {{ form.as_p }}
+
+  	              <br>
+
+  	              <input name="" type="submit" value="Add"  ></input> -->
+   <form method="post" action="" enctype="multipart/form-data" accept-charset="UTF-8" class="sidebar-form">
+
+
+  	 			{% csrf_token %}
+
+  	 			{{ form.as_p }}
+
+  				<input name="" type="submit" value="Add"  ></input>
+
+  			</form>
+
+
+  <br/>
+  	  <input name="" type="submit" value="Add"  ></input>
+
+  </form>
+
+
+  </div>
+
+</div>
+
+
+<div class="calage"></div>
+</div>
+
+
+
+<div id="A5">
+
+<div id="wrapper-A5">
+
+<div id="wrapper-part-left" class="text-part-A5">
+<div id="A5-left" class="wow flipInX" data-wow-offset="10">
+<div id="left-text-post"><strong>Our recent Reservations</strong></div>
+    <div id="left-line-post"></div>
+    <div id="left-line2-post"></div>
+<ul>
+
+    {% for ab in this_list  %}
+
+
+<li><div id="left-text-post-1"><strong><a href="/detail/{{ab.pk}}">{{ab.item}}</a></strong></div></li>
+{% endfor %}
+</ul>
+  </div>
+</div>
+
+
+<div id="wrapper-part-right" class="text-part-A5">
+
+        <div id="wrapper-part-mid" class="text-part-A5">
+          <div id="A5-middle" class="wow flipInX" data-wow-offset="10" data-wow-delay="0.2s">
+          <div id="mid-text-post"><strong>Our Other Sites</strong></div>
+              <div id="mid-line-post"></div>
+              <div id="mid-line2-post"></div>
+      <ul>
+                <li><div id="mid-text-post-1"><strong><a href="http://www.climbchina.net">Climb China</a></strong></div></li>
+        <li><div id="mid-text-post-2"><strong><a href="http://www.hubforthepeople.com">Hub for the People</a></strong></div></li>
+        <li><div id="mid-text-post-3"><strong><a href="http://www.boygeniusmarketing.com">Boy Genius Marketing</a></strong></div></li>
+          </ul>
+            </div>
+        </div>
+</div>
+
+<div class="A5-calage"></div>
+</div>
+
+</div>
+
+
+<!-- PART 5 BIS - SUB MENU AND RELATED NUMBERS -->
+
+<div id="A5b">
+
+<div id="wrapper-A5b">
+
+<div id="wrapper-A5b-part-left">
+<div id="A5b-left" class="wow flipInX" data-wow-offset="10">
+<div id="left-A5b-text-post">{{ how_many }}</div>
+    <div id="left-A5b-line-post"></div>
+    <div id="left-A5b-line2-post"></div>
+<div id="left-A5b-text-post-1"><strong>Posts</strong></div>
+</div>
+</div>
+
+<div id="wrapper-A5b-part-mid">
+<div id="A5b-middle" class="wow flipInX" data-wow-offset="10" data-wow-delay="0.2s">
+<div id="mid-A5b-text-post">235</div>
+    <div id="mid-A5b-line-post"></div>
+    <div id="mid-A5b-line2-post"></div>
+<div id="mid-A5b-text-post-1"><strong>Likes</strong></div>
+</div>
+</div>
+
+<div id="wrapper-A5b-part-right">
+<div id="A5b-right" class="wow flipInX" data-wow-offset="10" data-wow-delay="0.4s">
+<div id="right-A5b-text-post">6509</div>
+    <div id="right-A5b-line-post"></div>
+    <div id="right-A5b-line2-post"></div>
+<div id="right-A5b-text-post-1"><strong>Views</strong></div>
+ </div>
+</div>
+
+<div class="A5b-calage"></div>
+</div>
+
+</div>
+
+<!-- PART 6 - SOCIAL PART -->
+
+
+
+<!-- SCRIPT -->
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+				{% load staticfiles %}
+				<head>
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+				<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+				<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+				<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+				<script>
+				$(function() {
+				  $( "#id_what_day" ).datepicker();
+				});
+				</script>
+				</head>
+				<body>
+
+				<div class="container">
+
+				<div id="form-demo" class="row-field">
+					<!-- <form method="post" action="" enctype="multipart/form-data" accept-charset="UTF-8" class="sidebar-form">
+
+					      {% csrf_token %}
+
+					              {{ form.as_p }}
+
+					              <br>
+
+					              <input name="" type="submit" value="Add"  ></input> -->
+				 <form method="post" action="" enctype="multipart/form-data" accept-charset="UTF-8" class="sidebar-form">
+
+
+					 			{% csrf_token %}
+
+					 			{{ form.as_p }}
+
+								<input name="" type="submit" value="Add"  ></input>
+
+							</form>
+
+				 <!-- <form method="post" action="" id="dateTimeExample" method="POST" class="form-group" enctype="multipart/form-data" accept-charset="UTF-8" > -->
+
+
+											<!-- <tr><th><label for="id_date_time">Date time:</label></th><td>
+
+
+												{{ form.How_many_for_reservation.label }}	{{ form.How_many_for_reservation }}<br>
+
+											{{ form.food_ordered.label }}{{ form.food_ordered }}<br>
+											{{ form.email_address.label }}{{ form.email_address }}<br>
+											{{ form.price_paid.label }}{{ form.price_paid }}<br>
+											<div id="id_date_time" class="input-group date">
+
+
+												 <input readonly="" id ="id_what_day" type="text" name="date_time" id="id_date_time" />
+												 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+												 <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+
+
+											</div>
+
+
+				<script type="text/javascript">
+					 $("#id_date_time").datetimepicker({autoclose: true,
+				language: 'en',
+				format: 'yyyy-mm-dd hh:ii:ss'}).find('input').addClass("form-control");
+				</script> -->
+
+				<br/>
+					  <input name="" type="submit" value="Add"  ></input>
+
+				</form>
+
+
+				</div>
+				</body>

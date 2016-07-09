@@ -1,0 +1,91 @@
+
+{% extends 'base2.html' %}
+
+{% block 'content' %}
+
+<div class = "text-2c" style = "width:700px;font-size:20px;">
+  <div style = "margin-top:50px;font-size:30px;text-decoration:underline;margin-bottom:30px;">
+
+
+  Detail for Reservation Number: {{object.pk}}
+</div>
+
+
+    <!-- <div class = "table"> -->
+    <table width = "600px">
+      <thead>
+
+
+              <td>
+            How Many For Reservation
+              </td>
+
+              <td>
+              What Day
+              </td>
+
+              <!-- <td>
+              Is live
+
+              </td> -->
+
+
+              <td>
+            Price Paid
+
+              </td>
+
+
+
+              <td>
+            Food Ordered
+
+              </td>
+
+
+
+  </thead>
+  <tbody>
+
+
+                  <td>
+                  {{object.How_many_for_reservation}}
+                  </td>
+
+                  <td>
+                  {{object.what_day}}
+                  </td>
+
+                  <!-- <td>
+                  {{object.is_live}}
+
+                  </td> -->
+                  <td>
+                  {{object.price_paid}}
+</td>
+
+
+                  <td>
+                  {{object.food_ordered}}
+</td>
+  </tbody>
+</table>
+
+
+<hr>
+
+<!--
+<form method="post" action="" enctype="multipart/form-data" accept-charset="UTF-8" class="sidebar-form">
+      {% csrf_token %}
+      <div class = "formb">
+              {{ form.as_p }}<br>
+            </div>
+
+
+              <input name="" type="submit" value="Add"  ></input>
+
+
+    </form> -->
+</div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+
+
+{% extends 'base2.html' %}
+
+
+{% block 'content' %}
+
+
+        <head>
+            <title>{% block head_title %}{% endblock head_title %}</title>
+        </head>
+        <div class = "text-2e" style = "margin-top:60px;">
+          <div style = "font-size:20px;line-height:23px;margin-top:30px;">
+            {% block body %}
+
+            {% block content %}
+
+            {% endblock content %}
+            {% endblock body %}
+
+            {% block extra_body %}
+            {% endblock extra_body %}
+          </div>
+        </div>
+{% endblock %}

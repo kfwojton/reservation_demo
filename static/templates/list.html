@@ -1,0 +1,111 @@
+
+{% extends 'base2.html' %}
+
+{% block 'content' %}
+
+<div id = "text-2a" style = "text-align:center;margin-top:30px;font-size:30px;">
+
+This is a list of active Auctions
+
+</div>
+
+<div id = "text-2a" style = "text-align:center;margin-top:0px;font-size:18px;">
+
+Note: The Red box means the auction is closed and the green box means it is live.
+
+</div>
+<table class = "text-table" width="1200px" style="margin-left:auto;margin-right:auto;margin-top:60px;margin-bottom:60px;" >
+  <div>
+  <tr  style = "font-size:25px;text-decoration:underline;">
+
+{% if request.user.is_superuser %}
+<td>
+</td>
+
+{% endif %}
+
+
+    <td>
+    </td>
+    <td> Reservation ID
+    </td>
+    <td> How Many Ate
+    </td>
+
+    <td>Price Paid
+    </td>
+
+    <td> What Day
+    </td>
+
+
+    <td> Edit
+    </td>
+
+    {% if request.user.is_superuser %}
+    <td> Delete
+    </td>
+
+    {% endif %}
+</tr>
+</div>
+
+{% for ab in object_list %}
+
+<tr style = "font-size:20px;border:none;">
+    {% if request.user.is_superuser %}
+
+
+   {% if ab.success %}
+
+   <td>
+    {{ ab.success }}
+  </td>
+
+
+  {% else %}
+  <td>
+
+ </td>
+ {% endif %}
+
+  {% endif %}
+
+  <td> <div style ="width:20px;height:20px;background-color:{% if ab.is_live %}green{% else %}red {% endif %};display:none;"></div>
+  </td>
+
+  <td>  <a href = "detail/{{ab.pk}}"> {{ab.pk}} </a>
+  </td>
+  <td> {{ab.How_many_for_reservation}}
+  </td>
+
+  <td> {{ab.price_paid}}
+  </td>
+
+  <td> {{ab.what_day}}
+  </td>
+
+  <td> <a href = "update/{{ab.pk}}" style = "text-decoration:none;color:black;"> x </a>
+  </td>
+  {% if request.user.is_superuser %}
+  <td> <a href = "delete/{{ab.pk}}" style = "text-decoration:none;color:black;"> x </a>
+  </td>
+
+
+  {% endif %}
+
+
+
+</tr>
+</div>
+
+
+{% endfor %}
+  {{ ab.item }}<br>
+</table>
+</a>
+
+
+
+
+{% endblock %}

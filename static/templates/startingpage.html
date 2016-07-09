@@ -1,0 +1,125 @@
+
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  {% if game_started %}
+  <script>
+  setTimeout(function(){
+     window.location.reload(1);
+  }, 500);
+  </script>
+{% endif %}
+</head>
+<body style= "font-family: 'Open Sans', sans-serif;">
+
+<div class = "row" style = "font-size:20px;font-family:open sans; text-align:center;margin-top:30px;">
+  Red Light Green Light Game
+
+
+</div>
+
+<div class = "row" >
+
+  <div class= "col-md-6" style = "text-align:right;">
+      Instructions:
+  </div>
+  <div class= "col-md-6"style = "text-align:left;">
+
+    <ul>
+      <li>
+       When the square turns green press your button to advance.
+     </li>
+     <li>
+
+        A push of the button at the wrong time will send you backwords.
+      </li>
+      <li>
+       Press move at the bottom to start. Play against a computer for now.
+      </li>
+  </div>
+</div>
+
+
+<div class = "row" >
+
+<div class = "col-md-2">
+
+</div>
+
+<div class = "col-md-8" style = "background-color:grey;height:800px;" id = 'start'>
+
+
+<div style = "width:100px;height:100px;margin-left:auto;margin-right:auto;background-color:{{ color   }};">
+</div>
+
+<div  style="height:30px; line-height:30px;text-align:center;background-color:blue;width:100%; font-size:17px; color:white;margin:0;padding:0;margin-top:30px;">
+  Starting Line
+<div>
+
+
+<div class ="row" style = "height:450px;width:100%;background-color:white;margin:0;color:red;">
+{% if win_text %}
+
+{{ win_text }}
+
+{% else %}
+  <div class = "col-md-6" style = "padding-top:{{ css_value_player_one  }};">
+          <div style = "width:50px;height:50px;background-color:blue;margin-left:auto;margin-right:auto;">
+
+        </div>
+</div>
+    <div class = "col-md-6" style = "padding-top:{{ css_value_player_two  }};">
+            <div style = "width:50px;height:50px;background-color:blue;margin-left:auto;margin-right:auto;">
+
+          </div>
+  </div>
+
+  {% endif %}
+</div>
+
+<div class ="row" style = "height:150px;width:100%;background-color:grey;margin:0;">
+
+  <div class = "col-md-6" style = "border-right:2px black dotted;">
+    <div class = "row" style = "text-align:center;margin-top:30px;">
+      Player 1 <br>
+      {{ css_value_player_one  }}
+
+    </div>
+    <div class = "row" style = "margin-left:auto;margin-right:auto;margin-top:30px;border:1px black solid;line-height:30px;height:30px;text-align:center;width:100px;">
+    <a href = "/add#start"> Move </a>
+
+    </div>
+
+  </div>
+
+                <div class = "col-md-6">
+                  <div class = "row" style = "text-align:center;margin-top:30px;">
+                    Player 2<br>
+                    {{ css_value_player_two  }}
+
+                  </div>
+                  <div class = "row" style = "margin-left:auto;margin-right:auto;margin-top:30px;border:1px black solid;line-height:30px;height:30px;text-align:center;width:100px;">
+                    N/A
+
+                  </div>
+
+                </div>
+
+
+
+</div>
+</div>
+
+
+<div style = "col-md-2">
+  <div style = "border:2px black solid; background-color:white;width:200px; height:35px; line-height:35px;margin-left:auto;margin-right:auto;margin-top:5px;text-size:18px;color:black;text-align:center;"><a href = "/"> End Game </a>
+  </div>
+
+</div>
+</div>
+
+</body>
+</html
