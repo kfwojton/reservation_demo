@@ -191,3 +191,21 @@ def about_us(request):
 def writer(request, name):
     namea = name + '.html'
     return render(request, namea)
+
+def analytics(request):
+
+    k = auctions.objects.all()
+
+
+
+    total_sales = sum([f.price_paid for f in k])
+    l = [f.price_paid for f in k]
+
+
+    avg_per_customer = sum(l) / float(len(l))
+    number_of_sale = len(l)
+    print '[ number of sales ]'
+    print number_of_sale
+    food_choices = [f.food_ordered for f in k]
+
+    return render(request, 'analytics.html', {'total_sales':total_sales,'avg_per_customer':avg_per_customer,'number_of_sale':number_of_sale,'food_choices':food_choices}    )

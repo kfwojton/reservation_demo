@@ -24,7 +24,7 @@ print TEMPLATE_DIRS
 SECRET_KEY = 'jm)ji7s5!@(#%rfh+9!)mot&@cio*a^npebju#gfqha-0vrz=d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 TEMPLATE_DEBUG = True
 

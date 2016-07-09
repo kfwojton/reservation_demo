@@ -1,0 +1,55 @@
+
+{% extends 'base2.html' %}
+
+{% block 'content' %}
+
+<div class = "text-2c" style= "margin-top:30px;padding-bottom:5px;">
+
+<h1>
+Data Overview
+</h1>
+
+<table>
+<tr>
+	<td> Total Sales:
+	</td>
+
+		<td> {{total_sales}}
+		</td>
+
+</tr>
+
+<tr>
+	<td> Average Sales Per Customer:
+	</td>
+
+		<td> {{avg_per_customer}}
+		</td>
+
+</tr>
+
+
+<tr>
+	<td> Number of Sales:
+	</td>
+
+		<td> {{number_of_sale}}
+		</td>
+
+
+</tr>
+
+<tr>
+	<td> Food Choices:
+	</td>
+
+		<td>{% for a in food_choices %}
+
+			{{ a }}<br>
+			{% endfor %}
+		</td>
+
+
+</tr>
+</table>
+{% endblock %}

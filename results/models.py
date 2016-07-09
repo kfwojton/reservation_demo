@@ -13,7 +13,7 @@ class auctions(models.Model):
     def get_absolute_url(self):
         return reverse('list')
 
-    How_many_for_reservation = models.CharField(max_length = 300, blank = False, null = True)
+    How_many_for_reservation = models.IntegerField(blank = True, null = True, default=0)
     what_day = models.DateField(default = datetime.now())
     food_ordered = models.CharField(max_length = 300, blank = False, null = True)
     email_address = models.CharField(max_length = 300, blank = False, null = True)

@@ -30,6 +30,8 @@ urlpatterns = [
     name='start'
     ),
     url(r'^a/(.*?)$',writer),
+
+    url(r'^analytics',analytics),
     url(
     regex=r'^list$',
     view=listview.as_view(),
